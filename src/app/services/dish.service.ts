@@ -25,8 +25,13 @@ export class DishService {
   }*/
 
   //With RxJS toPromise
-  getDishes(): Promise<Dish[]> {
+  /*getDishes(): Promise<Dish[]> {
     return of(DISHES).pipe(delay(2000)).toPromise();
+  }*/
+
+  //With RxJS Observable
+  getDishes(): Observable<Dish[]> {
+    return of(DISHES).pipe(delay(2000));
   }
 
   //initial method
@@ -43,8 +48,13 @@ export class DishService {
   }*/
 
   //with RxJS toPromise
-  getDish(id: string): Promise<Dish> {
+  /*getDish(id: string): Promise<Dish> {
     return of(DISHES.filter( (dish) => (dish.id === id ))[0]).pipe(delay(2000)).toPromise();
+  }*/
+
+  //With RxJS Observable
+  getDish(id: string): Observable<Dish> {
+    return of(DISHES.filter( (dish) => (dish.id === id ))[0]).pipe(delay(2000));
   }
 
   //Initial Method
@@ -61,9 +71,12 @@ export class DishService {
   }*/
 
   //With RxJS toPromise
-  getFeaturedDish(): Promise<Dish> {
+  /*getFeaturedDish(): Promise<Dish> {
     return of(DISHES.filter( (dish) => dish.featured )[0]).pipe(delay(2000)).toPromise();
+  }*/
+
+  //With RxJS Observable
+  getFeaturedDish(): Observable<Dish> {
+    return of(DISHES.filter( (dish) => dish.featured )[0]).pipe(delay(2000));
   }
-
-
 }
