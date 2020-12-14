@@ -3,13 +3,16 @@ import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   //Initial Method
   /*getDishes(): Promise<Dish[]> {
@@ -30,9 +33,15 @@ export class DishService {
   }*/
 
   //With RxJS Observable
-  getDishes(): Observable<Dish[]> {
+  /*getDishes(): Observable<Dish[]> {
     return of(DISHES).pipe(delay(2000));
+  }*/
+
+  //using json-server
+  getDishes(): Observable<Dish[]> {
+    return this.http.get<Dish[]>(baseURL + 'dishes');
   }
+ 
 
   //initial method
   /*getDish(id: string): Promise<Dish> {
@@ -53,8 +62,13 @@ export class DishService {
   }*/
 
   //With RxJS Observable
-  getDish(id: string): Observable<Dish> {
+  /*getDish(id: string): Observable<Dish> {
     return of(DISHES.filter( (dish) => (dish.id === id ))[0]).pipe(delay(2000));
+  }*/
+
+  //using json-server
+  getDish(id: number): Observable<Dish> {
+    return this.http.get<Dish>(baseURL + 'dishes/' + id);
   }
 
   //Initial Method
@@ -76,11 +90,22 @@ export class DishService {
   }*/
 
   //With RxJS Observable
-  getFeaturedDish(): Observable<Dish> {
+  /*getFeaturedDish(): Observable<Dish> {
     return of(DISHES.filter( (dish) => dish.featured )[0]).pipe(delay(2000));
+  }*/
+
+  //using json-server
+  getFeaturedDish(): Observable<Dish> {
+    return this.http.get<Dish[]>(baseURL + 'dishes?featured=true').pipe(map(dishes => dishes[0]));
   }
 
-  getDishIds(): Observable<string[] | any> {
+  /*getDishIds(): Observable<string[] | any> {
     return of(DISHES.map(dish => dish.id));
+  }*/
+
+  //using json-server
+  getDishIds(): Observable<number[] | any> {
+    return this.getDishes().pipe(map(dishes => dishes.map(dish => dish.id)));
   }
+    
 }
