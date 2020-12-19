@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
 import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { baseURL } from '../shared/baseurl';
@@ -102,7 +101,7 @@ export class DishService {
   getFeaturedDish(): Observable<Dish> {
     return this.http.get<Dish[]>(baseURL + 'dishes?featured=true').pipe(map(dishes => dishes[0]))
     .pipe(catchError(this.processHTTPMsgService.handleError));
-  }
+  } 
 
   /*getDishIds(): Observable<string[] | any> {
     return of(DISHES.map(dish => dish.id));
@@ -111,7 +110,7 @@ export class DishService {
   //using json-server
   getDishIds(): Observable<number[] | any> {
     return this.getDishes().pipe(map(dishes => dishes.map(dish => dish.id)))
-      .pipe(catchError(error => error));;
+      .pipe(catchError(error => error));
   }
 
   putDish(dish: Dish): Observable<Dish> {

@@ -224,5 +224,86 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "0713359515",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Tel",
+      "message": "Great foods!",
+      "id": 1
+    },
+    {
+      "firstname": "Jihani",
+      "lastname": "Nanayakkara",
+      "telnum": "0703218269",
+      "email": "jihaninanayakkara@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Quality foods.",
+      "id": 2
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "0713359515",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Great",
+      "id": 3
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "0713359515",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Great",
+      "id": 4
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "0713359515",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Great",
+      "id": 5
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "0713359515",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Tel",
+      "message": "ABC",
+      "id": 6
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "123",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Tel",
+      "message": "abc",
+      "id": 7
+    },
+    {
+      "firstname": "Jalitha",
+      "lastname": "Dewapura",
+      "telnum": "123",
+      "email": "jdewapura@gmail.com",
+      "agree": true,
+      "contactType": "Tel",
+      "message": "abc",
+      "id": 8
+    }
+  ]
 }
